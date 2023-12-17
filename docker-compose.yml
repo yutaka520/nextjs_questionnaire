@@ -9,8 +9,6 @@ services:
       - ./nextjs_questionnaire:/app  # ファイルを直接マウント
     depends_on:
       - db
-    env_file:
-      - .env
 
   db:
     image: mysql:8.0.35
