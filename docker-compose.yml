@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   nextjs-app:
-    build: ./my-nextjs-app
+    build: ./nextjs_questionnaire
     ports:
       - "3000:3000"
     volumes:
-      - ./my-nextjs-app:/app  # ファイルを直接マウント
+      - ./nextjs_questionnaire:/app  # ファイルを直接マウント
     depends_on:
       - db
     env_file:
