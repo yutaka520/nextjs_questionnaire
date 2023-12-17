@@ -13,11 +13,11 @@ export interface SurveyResponse {
 // PostgreSQL接続情報
 const params = {
   connectionLimit: 10,
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: Number(process.env.DB_PORT),
+  host: process.env.NEXTJS_QUESTIONNARE_DB_HOST,
+  user: process.env.NEXTJS_QUESTIONNARE_DB_USER,
+  password: process.env.NEXTJS_QUESTIONNARE_DB_PASSWORD,
+  database: process.env.NEXTJS_QUESTIONNARE_DB_NAME,
+  port: Number(process.env.NEXTJS_QUESTIONNARE_DB_PORT),
 };
 
 export async function POST(req: Request) {
