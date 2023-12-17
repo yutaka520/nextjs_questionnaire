@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  nextjs-app:
+    build: ./my-nextjs-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./my-nextjs-app:/app  # ファイルを直接マウント
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+  db:
+    image: mysql:8.0.35
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_DATABASE: your_database_name
+      MYSQL_USER: your_user
+      MYSQL_PASSWORD: your_password
+    ports:
+      - '3307:3306'
